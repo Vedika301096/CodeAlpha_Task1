@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <h1> Our Image Gallery </h1>
+    
+    <div class="image-container">
+        <img src="images/child1.jpg" alt="">
+        <img src="images/family1.jpg" alt="">
+        <img src="images/place1.jpg" alt="">
+        <img src="images/child2.jpg" alt="">
+        <img src="images/family2.jpg" alt="">
+        <img src="images/place2.jpg" alt="">
+        <img src="images/family3.jpg" alt="">
+        <img src="images/child3.jpg" alt="">
+        <img src="images/place3.jpg" alt="">
+        <img src="images/child4.jpg" alt="">
+        <img src="images/family4.jpg" alt="">
+        <img src="images/place4.jpg" alt="">
+        <img src="images/family5.jpg" alt="">
+        <img src="images/place5.jpg" alt="">
+        <img src="images/family6.jpg" alt="">
+        <img src="images/place6.jpg" alt="">
+        <img src="images/family7.jpg" alt="">
+        <img src="images/family8.jpg" alt="">
+    </div>
+    <div class="view-image">
+        <img src="images/child2.jpg" alt="">
+        <span>X</span>
+    </div>
+</body>
+<script>
+    let images = document.querySelectorAll(".image-container img");
+    let viewImage = document.querySelector(".view-image");
+    let fullImage = document.querySelector(".view-image img");
+    let closeBtn = document.querySelector(".view-image span");
+    for(let image of images){
+        image.addEventListener("click",function(e){
+            console.log(e);
+            viewImage.style.display = "flex";
+            fullImage.src = e.target.src;
+        })
+    }
+    closeBtn.addEventListener('click',function(){
+        viewImage.style.display = "none";
+    })
+</script>
+</html>
